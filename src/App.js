@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './App.css'; // カスタムCSSをインポート
+import icon from './images/human1.png';
 
 const App = () => {
   const user = {
-    icon: 'images/human1.png',
+    icon,
     accountNumber: '12345678901',
     username: 'John Doe',
     balance: 1000
