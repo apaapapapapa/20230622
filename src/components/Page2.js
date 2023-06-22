@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Page2() {
   return (
-    <div>Page2</div>
+    <h1>This is Page2!</h1>
   );
 }
 export default Page2;
