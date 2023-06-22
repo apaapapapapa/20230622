@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
+import './App.css'; // カスタムCSSをインポート
 
-function App() {
+const App = () => {
+  const user = {
+    icon: 'images/human1.png',
+    accountNumber: '12345678901',
+    username: 'John Doe',
+    balance: 1000
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <div className="card text-center shadow">
+            <img src={user.icon} alt="User Icon" className="card-img-top user-icon" />
+            <div className="card-body">
+              <h5 className="card-title">ユーザ情報</h5>
+              <p className="card-text">口座番号: {user.accountNumber}</p>
+              <p className="card-text">ユーザ名: {user.username}</p>
+              <p className="card-text">預金残高: {user.balance}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
