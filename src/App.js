@@ -2,8 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BootstrapのCSSをインポート
 import './App.css'; // カスタムCSSをインポート
 import icon from './images/human1.png';
+import { BrowserRouter, Route, Link, NavLink, Routes } from "react-router-dom";
+import Another from './Another.js';
 
-const App = () => {
+//const TopPage = () => <App/>
+
+const User = () => {
   const user = {
     icon,
     accountNumber: '12345678901',
@@ -26,6 +30,24 @@ const App = () => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className="container">
+      <User/>
+      <BrowserRouter>
+        <ul>
+          <li>
+            <NavLink to="/next">NextPage</NavLink>
+          </li>
+        </ul>
+        <Routes>
+          <Route path="/next" element={<Another />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
